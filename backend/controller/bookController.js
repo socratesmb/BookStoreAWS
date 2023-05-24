@@ -17,7 +17,7 @@ const getBooksById = asyncHandler(async(req, res) => {
         AWS.config.update(jsonConfig);
         const docClient = new AWS.DynamoDB();
         const params = {
-            TableName: 'book',
+            TableName: 'libro',
             Key: AWS.DynamoDB.Converter.marshall({
                 name: req.params.id
             })
@@ -43,7 +43,7 @@ const getBooks = asyncHandler(async(req, res) => {
         AWS.config.update(jsonConfig);
         const docClient = new AWS.DynamoDB.DocumentClient();
         const params = {
-            TableName: 'book'
+            TableName: 'libro'
         };
 
         docClient.scan(params, function (err, data) {

@@ -32,7 +32,7 @@ const importData = async () => {
 
             const params = {
                 RequestItems: {
-                    'book': booksWithNewField.map(item => ({
+                    'libro': booksWithNewField.map(item => ({
                         PutRequest: {
                             Item: AWS.DynamoDB.Converter.marshall(item)
                         }
