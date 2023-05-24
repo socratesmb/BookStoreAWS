@@ -7,4 +7,4 @@ services:
     ports:
       - 80:3000
     environment:
-      REACT_APP_URL_SERVER: 'http://127.0.0.1:8080'
+      REACT_APP_URL_SERVER: 'http://LB-Aplication-2078111387.us-east-1.elb.amazonaws.com:8080'
