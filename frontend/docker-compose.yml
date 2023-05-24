@@ -2,7 +2,7 @@ version: '3.1'
 services:
   frontend:
     container_name: frontend
-    build: /.
+    build: .
     restart: always
     ports:
       - 80:3000
