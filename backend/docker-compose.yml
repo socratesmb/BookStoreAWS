@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  backend:
+    container_name: backend
+    build: /.
+    restart: always
+    ports:
+      - 8080:5000
+    environment:
+      NODE_ENV: Prod
+      #DB_PROVIDER: MongoDB
+      #DB_CONNECTION: mongodb+srv://userbook:pwbook@c-bookstore.tb3cco8.mongodb.net/?retryWrites=true&w=majority
+      DB_PROVIDER: DynamoDB
+      DB_CONNECTION: '{ "accessKeyId": "ASIA3K4PKUDY4CKOQDGP", "secretAccessKey": "u6Yxhr844DDQXs5ZyTue7tfKUgusQVWbVUxIfdZ/", "sessionToken": "FwoGZXIvYXdzEMr//////////wEaDFCqWrg6eaZqf+GmjSLIATIc+ErjFmnVFmtp9At14X3L0RsDrKfTUOFWtDpNEHi3fRUEd0z7o9xo8+/iGtc6kFOQLOTwWI/3p2wIHQD5uDG/CphIBJj2+/g1qT/eQlXQ2E6YnkhrIJqPibtatlbC2Xl+iFoJIIx3+45a0nmTRuHfkSDVkWNJU3riwIf0BGy4yRfA6TUQCERELn+/eJdYO36eMB/7Q3+DCVIirRwsPTqYWjaTBiIaXY3Lymi0uSpKxgbLrcB1Xe8tV+v9/Ml9IxHtmQ5elPA+KLG7taMGMi1fAR78sQ7G+fi+RIXlRyzp2qtBsbixE2xn2PBrqqPK0ySS6cseenowzKV9pSw=", "region": "us-east-1"}'
