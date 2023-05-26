@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+
 import { Link } from 'react-router-dom';
 import { Row, Col, Image, ListGroup } from 'react-bootstrap';
 
 
 const BookScreen = ({ match }) => {
-    console.log(match)
+
     const [book, setBook] = useState({})
 
     useEffect(() => {
         const fetchBook = async () => {
+            console.log('request a book...')
             const { data } = await axios.get(`/api/books/${match.params.id}`)
 
             setBook(data)
