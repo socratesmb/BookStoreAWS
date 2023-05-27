@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 const Book = ({ book }) => {
     return(
         <Card className='my-3 p-3 rounded'>
-            <Link to={`/book/${book._id}`}>
+            <Link to={`/book/${book.id}`}>
                 <Card.Img src={book.image} variant='top'/>
             </Link>
 
             <Card.Body>
-                <Link to={`/book/${book._id}`}>
+                <Link to={`/book/${book.id}`}>
                     <Card.Title as='div'>
                         <strong>{book.name}</strong>
                     </Card.Title>

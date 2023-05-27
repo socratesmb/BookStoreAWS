@@ -1,24 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-
 import { Link } from 'react-router-dom';
 import { Row, Col, Image, ListGroup } from 'react-bootstrap';
+import booksData from '../data/books'; 
 
 
 const BookScreen = ({ match }) => {
 
     const [book, setBook] = useState({})
-
+    
     useEffect(() => {
-        const fetchBook = async () => {
-            console.log('request a book...')
-            const { data } = await axios.get(`/api/books/${match.params.id}`)
 
-            setBook(data)
-        }
-        fetchBook()
+        setBook(booksData[match.params.id])
+
     }, [match])
-
 
     return (
         <>
@@ -52,4 +46,3 @@ const BookScreen = ({ match }) => {
 }
 
 export default BookScreen
-
